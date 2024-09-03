@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { PrivyContext } from "@/providers/PrivyContext";
+import { SafeContext } from "@/providers/SafeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <PrivyContext>{children}</PrivyContext>
+        <PrivyContext>
+          <SafeContext>{children}</SafeContext>
+        </PrivyContext>
       </body>
     </html>
   );

@@ -1,3 +1,6 @@
+"use client"
+
+
 import { ConnectedWallet, usePrivy, useWallets } from "@privy-io/react-auth";
 import { createSmartAccountClient, ENTRYPOINT_ADDRESS_V07, SmartAccountClient, walletClientToSmartAccountSigner } from "permissionless";
 import { signerToSafeSmartAccount, SmartAccount } from "permissionless/accounts";
@@ -96,8 +99,6 @@ export function SafeContext ({ children }: SafeContextProps) {
                 sponsorUserOperation: biconomyPaymasterClient.sponsorUserOperation,
             },
         }).extend(erc7579Actions({ entryPoint: ENTRYPOINT_ADDRESS_V07 }))
-
-        //const smartAccountAddress = smartAccountClient.account?.address;
 
         setSmartAccountClient(smartAccountClient);
         setSmartAccountAddress(smartAccountClient.account?.address);

@@ -19,7 +19,7 @@ export function MemberNotFound() {
             console.log(smartAccountAddress!)
             const purchase_ = purchase(smartAccountAddress!) 
             console.log(purchase_)
-            /*
+            
             const txHash = await smartAccountClient.sendTransaction({
                 account: smartAccountClient.account!,
                 chain: base,
@@ -28,7 +28,7 @@ export function MemberNotFound() {
                 value: BigInt(0)
             })
             console.log(txHash)
-            */
+            
             setLoading(false)
         } catch (error) {
             console.log(error)
